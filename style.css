@@ -96,7 +96,6 @@ input::placeholder{
   cursor: pointer;
   position:relative;
 }
-
 .settings .task-menu{
   position:absolute;
   padding: 5px 0;
