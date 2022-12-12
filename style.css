@@ -92,19 +92,19 @@ input::placeholder{
   margin-top: 6px;
   margin-right: 12px;
 }
-.setting{
-  position: relative;
+.task .settings{
   cursor: pointer;
+  position:relative;
 }
 
 .settings .task-menu{
   position:absolute;
-  padding:5px 0;
-  left: 380px;
-  z-index: 2;
+  padding: 5px 0;
+  z-index: 3;
+  right: -5px;
   border-radius: 4px;
   background: #fff;
-  box-shadow: 0 0 6px rgba(0,0,0,0.15);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
   transform: scale(0);
   transform-origin: top right;
   transition: transform 0.2s ease;
@@ -113,10 +113,14 @@ input::placeholder{
   transform: scale(1);
 }
 .task-menu li{
+  width: 95px;
   height: 25px;
-  padding: 0 12px;
+  padding: 0 10px;
   margin-bottom: 2px;
-  flex-direction: column;
-  align-items: flex-start;
 }
-
+.task-menu li:hover{
+background: #f5f5f5;
+}
+.task-menu li:last-child{
+  padding-bottom: 0;
+}
