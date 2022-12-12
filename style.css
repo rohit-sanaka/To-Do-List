@@ -1,0 +1,99 @@
+/* Import google fonts - poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); 
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', 'sans-serif';
+}
+body{
+  background: skyblue;
+}
+.wrapper{
+  max-width: 400px;
+  margin: 130px auto;
+  background-color: white;
+  border-radius: 7px;
+  padding: 28px 0;
+}
+.task-input{
+  height: 55px;
+  padding: 0 25px;
+  position: relative;  
+}
+img{
+  width: 35px;
+  height: 40px;
+  position: absolute;
+  transform: translate(10px, 8px);
+  opacity: 70%;
+}
+.task-input input{
+  width: 100%;
+  height: 100%;
+  padding: 0 20px 0 55px;
+  font-size: large;
+  border: 1px solid #999;
+  border-radius: 5px;
+  outline: none;
+}
+input::placeholder{
+  color: #bfbfbf;
+}
+
+.contols,li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contols{
+  padding:15px 25px;
+  border-bottom: 2px solid #ccc;
+}
+.filters span{
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: large;
+}
+.filters span.active{
+  color:#3c87ff ;
+}
+.clear-btn{
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: #3c87ff;
+  color: #fff;
+  border-radius: 4px;
+  padding:6px 12px;
+  font-size: small;
+}
+.task-box{
+  margin: 20px 25px;
+}
+.task-box .task{
+  list-style: none;
+  font-size: medium;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.task-box .task:last-child{
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+.task label{
+  display: flex;
+  align-items:flex-start;
+}
+.task label input{
+  margin-top: 6px;
+  margin-right: 12px;
+}
+.setting{
+  position: relative;
+  cursor: pointer;
+}
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <!-- Font-Awesome link for icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        />
+        <!-- Iconscout Link For Icons -->
+        <link
+            rel="stylesheet"
+            href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+        />
+        <title>To-Do List</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="task-input">
+                <img src="/menu-bar-1.png" alt="menu-icon" />
+                <input type="text" placeholder="Add a new task" />
+            </div>
+            <div class="contols">
+                <div class="filters">
+                    <span id="All" class="active">All</span>
+                    <span id="Pending">Pending</span>
+                    <span id="Completed">Completed</span>
+                </div>
+                <button class="clear-btn">Clear All</button>
+            </div>
+            <div>
+                <ul class="task-box">
+                    <li class="task">
+                        <label for="1">
+                            <input type="checkbox" id="1" />
+                            <p>This is task 2</p>
+                        </label>
+                        <div class="settings">
+                            <i class="uil uil-ellipsis-h"></i>
+                            <ul class="task-menu">
+                                <li><i class="uil uil-pen">Edit</i></li>
+                                <li><i class="uil uil-trash">Delete</i></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="task">
+                        <label for="2">
+                            <input type="checkbox" id="2" />
+                            <p>This is task 2</p>
+                        </label>
+                        <div class="settings">
+                            <i class="uil uil-ellipsis-h"></i>
+                        </div>
+                    </li>
+                    <li class="task">
+                        <label for="3">
+                            <input type="checkbox" id="3" />
+                            <p>This is task 3</p>
+                        </label>
+                        <div class="settings">
+                            <i class="uil uil-ellipsis-h"></i>
+                        </div>
+                    </li>
+                    <li class="task">
+                        <label for="4">
+                            <input type="checkbox" id="4" />
+                            <p>This is task 4</p>
+                        </label>
+                        <div class="settings">
+                            <i class="uil uil-ellipsis-h"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
