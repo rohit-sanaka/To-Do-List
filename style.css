@@ -97,3 +97,26 @@ input::placeholder{
   cursor: pointer;
 }
 
+.settings .task-menu{
+  position:absolute;
+  padding:5px 0;
+  left: 380px;
+  z-index: 2;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0,0,0,0.15);
+  transform: scale(0);
+  transform-origin: top right;
+  transition: transform 0.2s ease;
+}
+.settings:hover .task-menu{
+  transform: scale(1);
+}
+.task-menu li{
+  height: 25px;
+  padding: 0 12px;
+  margin-bottom: 2px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
