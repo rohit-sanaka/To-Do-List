@@ -72,6 +72,9 @@ input::placeholder{
 .task-box{
   margin: 20px 25px;
 }
+.task-box p.checked{
+  text-decoration: line-through;
+}
 .task-box .task{
   list-style: none;
   font-size: medium;
