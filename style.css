@@ -111,7 +111,7 @@ input::placeholder{
   transform-origin: top right;
   transition: transform 0.2s ease;
 }
-.settings:hover .task-menu{
+.settings .task-menu.show{
   transform: scale(1);
 }
 .task-menu li{
