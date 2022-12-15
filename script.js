@@ -45,7 +45,11 @@ showTodo("all");
 
 function showMenu(selectedTask) {
     let taskMenu = selectedTask.parentElement.lastElementChild;
-    taskMenu.classList.add("show");
+    if (!taskMenu.classList.contains("show")) {
+        taskMenu.classList.add("show");
+    } else {
+        taskMenu.classList.remove("show");
+    }
     document.addEventListener("click", (e) => {
         if (e.target.tagName != "I" || e.target != selectedTask) {
             taskMenu.classList.remove("show");
