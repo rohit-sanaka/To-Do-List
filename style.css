@@ -9,27 +9,46 @@
 body{
   background: skyblue;
 }
+.date-time{
+  padding:0 25px 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#clock ,#day, #date {
+  width:150px;
+  font-size: 20px;
+  font-family: monospace;
+  color: #2192FF;
+}
+#date{
+  text-align: center;
+}
+#clock{
+  text-align: end;
+}
 .wrapper{
-  max-width: 400px;
+  max-width: 500px;
   margin: 130px auto;
   background-color: white;
   border-radius: 7px;
   padding: 28px 0;
 }
 .task-input{
-  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
   padding: 0 25px;
   position: relative;  
 }
 img{
-  width: 35px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   position: absolute;
-  transform: translate(10px, 8px);
-  opacity: 70%;
+  transform: translate(15px, 10px);
+  opacity: 50%;
 }
 .task-input input{
-  width: 100%;
   height: 100%;
   padding: 0 20px 0 55px;
   font-size: large;
@@ -40,8 +59,29 @@ img{
 input::placeholder{
   color: #bfbfbf;
 }
+.submit-btn , .clear-btn{
+  cursor: pointer;
+  opacity: 90%;
+  width: 90px;
+  outline: none;
+  border: none;
+  background-color: #38E54D;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 100%;
+}
 
-.contols,li{
+.clear-btn{
+background-color: #FDFF00;
+font-size: 100%;
+}
+
+.btn:hover{
+  opacity: 100%;
+  transform:scale(105%);
+}
+
+.contols,li,.filters{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,24 +91,28 @@ input::placeholder{
   padding:15px 25px;
   border-bottom: 2px solid #ccc;
 }
+.task-input input , .filters {
+  width: 340px;
+}
 .filters span{
+  padding : 8px 12px;
+  width: 100px;
+  opacity: 70%; 
+  text-align: center;
+  border-radius: 4px;
+  background-color: #00FFD1;
   cursor: pointer;
-  margin: 0 10px;
-  font-size: large;
+  margin: 0 ;
+  font-size: 90%;
 }
 .filters span.active{
-  color:#3c87ff ;
+  color :#fff ;
+  background-color:#2192FF ;
+  transform:scale(105%);
+  opacity: 100%;
+  transition-duration: 0.1s;  
 }
-.clear-btn{
-  cursor: pointer;
-  outline: none;
-  border: none;
-  background-color: #3c87ff;
-  color: #fff;
-  border-radius: 4px;
-  padding:6px 12px;
-  font-size: small;
-}
+
 .task-box{
   margin: 20px 25px;
 }

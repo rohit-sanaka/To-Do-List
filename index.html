@@ -20,9 +20,19 @@
 
     <body>
         <div class="wrapper">
+            <div class="date-time">
+                <div id="day">Week</div>
+                <div id="date">date</div>
+                <div id="clock">00:00:00 AM</div>
+            </div>
             <div class="task-input">
-                <img src="/menu-bar-1.png" alt="menu-icon" />
-                <input type="text" placeholder="Add a new task" />
+                <img src="/list-check-solid.svg" alt="menu-icon" />
+                <input
+                    type="text"
+                    class="text-box"
+                    placeholder="Add a new task"
+                />
+                <button class="submit-btn btn">Submit</button>
             </div>
             <div class="contols">
                 <div class="filters">
@@ -30,7 +40,7 @@
                     <span id="pending">Pending</span>
                     <span id="completed">Completed</span>
                 </div>
-                <button class="clear-btn">Clear All</button>
+                <button class="clear-btn btn">Clear All</button>
             </div>
             <div>
                 <ul class="task-box">
