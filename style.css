@@ -9,6 +9,9 @@
 body{
   background: skyblue;
 }
+h1{
+  text-align: center;
+}
 .date-time{
   padding:0 25px 15px 25px;
   display: flex;
@@ -21,7 +24,7 @@ body{
   font-family: monospace;
   color: #2192FF;
 }
-#date{
+#day{
   text-align: center;
 }
 #clock{
@@ -29,10 +32,10 @@ body{
 }
 .wrapper{
   max-width: 500px;
-  margin: 130px auto;
+  margin: auto;
   background-color: white;
   border-radius: 7px;
-  padding: 28px 0;
+  padding: 28px 0 10px 0;
 }
 .task-input{
   display: flex;
@@ -81,7 +84,7 @@ font-size: 100%;
   transform:scale(105%);
 }
 
-.contols,li,.filters{
+.contols,li,.filters,.task{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -115,8 +118,17 @@ font-size: 100%;
 
 .task-box{
   margin: 20px 25px;
+  max-height: 260px;
+  overflow: auto;
+  scroll-behavior: smooth;
 }
-.task-box p.checked{
+.task-box span{
+  width:360px;
+  height: auto;
+  overflow-wrap: break-word;
+}
+
+.task-box span.checked{
   text-decoration: line-through;
 }
 .task-box .task{
@@ -142,6 +154,7 @@ font-size: 100%;
 .task .settings{
   cursor: pointer;
   position:relative;
+  padding-right:10px;
 }
 .settings .task-menu{
   position:absolute;
