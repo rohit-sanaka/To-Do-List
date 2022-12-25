@@ -5,6 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
+
+        <!--Google Fonts (Poppins)    -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
         <!-- Font-Awesome link for icons -->
         <link
             rel="stylesheet"
@@ -19,30 +27,35 @@
     </head>
 
     <body>
-        <h1>Rohit Kumar Sanaka</h1>
-        <h1>To-Do List</h1>
+        <div class="heading">
+            <h2>Rohit Kumar Sanaka</h2>
+            <h2>To-Do List</h2>
+        </div>
+
         <div class="wrapper">
             <div class="date-time">
-                <div id="date">date</div>
-                <div id="day">Week</div>
-                <div id="clock">00:00:00 AM</div>
+                <div id="date" class="dt">date</div>
+                <div id="day" class="dt">Week</div>
+                <div id="clock" class="dt">00:00:00 AM</div>
             </div>
             <div class="task-input">
-                <img src="/list-check-solid.svg" alt="menu-icon" />
+                <img src="./list-check-solid.svg" alt="menu-icon" />
                 <input
                     type="text"
                     class="text-box"
                     placeholder="Add a new task"
                 />
                 <button class="submit-btn btn">Submit</button>
+                <i class="fa-solid fa-plus plus-btn"></i>
             </div>
-            <div class="contols">
+            <div class="controls">
                 <div class="filters">
                     <span id="all" class="active">All</span>
                     <span id="pending">Pending</span>
                     <span id="completed">Completed</span>
                 </div>
-                <button class="clear-btn btn">Clear All</button>
+                <button class="clear-btn btn">Clear</button>
+                <i class="fa-solid fa-broom broom-btn"></i>
             </div>
             <div>
                 <ul class="task-box">

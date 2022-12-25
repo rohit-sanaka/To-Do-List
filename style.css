@@ -1,82 +1,132 @@
-/* Import google fonts - poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); 
+/* defaults */
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: 'poppins', 'sans-serif';
 }
+html{
+ font-size:10px; 
+}
 body{
-  background: skyblue;
+  background:black;
 }
-h1{
-  text-align: center;
+
+/*---------- Typography ------------*/
+
+.heading{
+  color:chartreuse;
+  font-size: 1.6rem;
 }
-.date-time{
-  padding:0 25px 15px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 #clock ,#day, #date {
-  width:150px;
-  font-size: 20px;
-  font-family: monospace;
-  color: #2192FF;
+  font-size: 2rem;
+  font-family:monospace;
+  color:gold;
 }
-#day{
+
+.controls .broom-btn{
+  font-size: 1.5rem;
+}
+
+.submit-btn , .clear-btn{
+  font-size: 1.5rem;
+}
+
+
+/*------------ Layout -----------*/
+
+.heading{
+  margin:1em auto;
   text-align: center;
-}
-#clock{
-  text-align: end;
 }
 .wrapper{
+  width:95%;
   max-width: 500px;
   margin: auto;
   background-color: white;
   border-radius: 7px;
-  padding: 28px 0 10px 0;
+  padding: 1em;
 }
-.task-input{
+.date-time{
+  background-color:sienna;
+  padding: 1em;
+  border-radius: 1em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media screen and (max-width:440px){
+  html{
+    font-size: 7.5px;;
+  }
+  .date-time{
+    align-items: center;
+    flex-wrap:wrap-reverse;
+  }
+  .dt{
+    margin: .1em;
+    border-radius: .25em;
+  }
+}
+
+.task-input,.controls{
   display: flex;
   justify-content: space-between;
-  height: 50px;
-  padding: 0 25px;
+  height: 5em;
+  margin:1em 0;
   position: relative;  
 }
 img{
-  width: 30px;
-  height: 30px;
+  width: 2.5em;
+  height: 3em;
   position: absolute;
-  transform: translate(15px, 10px);
+  transform: translate(1.5em, 1em);
   opacity: 50%;
 }
+
 .task-input input{
-  height: 100%;
-  padding: 0 20px 0 55px;
-  font-size: large;
+  width: 83%;
+  padding: 0 1em 0 2.5em;
+  font-size: 2.2rem;
   border: 1px solid #999;
   border-radius: 5px;
   outline: none;
 }
+@media screen and (max-width : 440px) {
+}
+
 input::placeholder{
   color: #bfbfbf;
 }
 .submit-btn , .clear-btn{
   cursor: pointer;
   opacity: 90%;
-  width: 90px;
+  width: 15%;
   outline: none;
   border: none;
   background-color: #38E54D;
-  border-radius: 4px;
-  padding: 6px 12px;
-  font-size: 100%;
+  border-radius: .3em;
+  font-size: 1.4rem;
+  padding:0.5em;
 }
 
-.clear-btn{
-background-color: #FDFF00;
-font-size: 100%;
+.task-input .plus-btn, .controls .broom-btn{
+  display: none;
+  cursor: pointer;
+  width: 15%;
+  height: 100%;
+  opacity: 90%;
+  background-color: #38E54D;
+  border-radius: 0.3em;
+  padding:0.75em 0;
+  text-align: center;
+}
+
+.clear-btn,.controls .broom-btn{
+  background-color:#FDFF00 ;
+  height: 83%;
 }
 
 .btn:hover{
@@ -84,29 +134,45 @@ font-size: 100%;
   transform:scale(105%);
 }
 
-.contols,li,.filters,.task{
+@media screen and (max-width : 440px){ 
+  .submit-btn,.clear-btn{
+    display:none;
+  }
+
+  .task-input .plus-btn{
+    display: block;
+    font-size: 2rem;
+  }
+
+  .controls .broom-btn{
+    display: block;
+  }
+
+}
+
+.controls,.filters,.task-box .task{
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.contols{
-  padding:15px 25px;
+.filters{
+  width: 83%;
+}
+.controls{
+  padding:0 0.2em 0.5em 0.2em;
   border-bottom: 2px solid #ccc;
 }
-.task-input input , .filters {
-  width: 340px;
-}
+
 .filters span{
-  padding : 8px 12px;
-  width: 100px;
+  padding : .5em .8em;
+  width:10rem;
   opacity: 70%; 
   text-align: center;
-  border-radius: 4px;
+  border-radius: 0.3em;
   background-color: #00FFD1;
   cursor: pointer;
-  margin: 0 ;
-  font-size: 90%;
+  font-size: 1.4rem;
 }
 .filters span.active{
   color :#fff ;
@@ -116,51 +182,59 @@ font-size: 100%;
   transition-duration: 0.1s;  
 }
 
+ul span{
+  font-size: 2rem;
+}
+
 .task-box{
-  margin: 20px 25px;
-  max-height: 260px;
-  overflow: auto;
-  scroll-behavior: smooth;
+  width: 100%;
+  padding:1em 1em 0 1em;
+  max-height: 30em;
+  overflow:auto;
+  scroll-behavior:auto;
+}
+
+.task-box .task{
+  width: 100%;
+  font-size: 1.8rem;
+  list-style: none;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #ccc;
+}
+
+.task-box .task:last-child{
+  border-bottom: 0;
+}
+.task label{
+  width: 90%;
+  display: flex;
+  align-items:center;
+}
+.task label input{
+  margin:0.5em 1em 0.5em 0em;
 }
 .task-box span{
-  width:360px;
-  height: auto;
+  width: 90%;
   overflow-wrap: break-word;
 }
 
 .task-box span.checked{
   text-decoration: line-through;
 }
-.task-box .task{
-  list-style: none;
-  font-size: medium;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ccc;
-}
-.task-box .task:last-child{
-  padding-bottom: 0;
-  margin-bottom: 0;
-  border-bottom: 0;
-}
-.task label{
-  display: flex;
-  align-items:flex-start;
-}
-.task label input{
-  margin-top: 6px;
-  margin-right: 12px;
-}
+
+
 .task .settings{
   cursor: pointer;
   position:relative;
-  padding-right:10px;
+  padding-right:1em;
 }
 .settings .task-menu{
+  list-style: none;
   position:absolute;
-  padding: 5px 0;
-  z-index: 3;
-  right: -5px;
+  padding: 0.5em 0;
+  z-index: 2;
+  right: -0.5em;
   border-radius: 4px;
   background: #fff;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
@@ -168,6 +242,7 @@ font-size: 100%;
   transform-origin: top right;
   transition: transform 0.2s ease;
 }
+
 .settings .task-menu.show{
   transform: scale(1);
 }
@@ -183,3 +258,5 @@ background: #f5f5f5;
 .task-menu li:last-child{
   padding-bottom: 0;
 }
+
+

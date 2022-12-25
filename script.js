@@ -1,8 +1,10 @@
 const taskInput = document.querySelector(".task-input input");
 const taskBox = document.querySelector(".task-box");
-const clearAll = document.querySelector(".clear-btn");
+const clearBtn = document.querySelector(".clear-btn");
+const broomBtn = document.querySelector(".broom-btn");
 const filters = document.querySelectorAll(".filters span");
 const submit = document.querySelector(".submit-btn");
+const plusButton = document.querySelector(".plus-btn");
 
 let editId;
 let currentFilter = "all";
@@ -53,13 +55,13 @@ filters.forEach((filter) => {
 //to display day, date, clock
 function updateClock() {
     const days = {
+        0: "Sunday",
         1: "Monday",
         2: "Tuesday",
         3: "Wednesday",
         4: "Thursday",
         5: "Friday",
         6: "Saturday",
-        7: "Sunday",
     };
     var currentTime = new Date();
     var currentDay = days[currentTime.getUTCDay()];
@@ -123,11 +125,13 @@ function deleteTask(deleteId) {
 }
 
 //to clear all task from local storage.
-clearAll.addEventListener("click", () => {
+function clearAll() {
     todos.splice(0, todos.length);
     localStorage.setItem("todo-list", JSON.stringify(todos));
     showTodo(currentFilter);
-});
+}
+clearBtn.addEventListener("click", clearAll);
+broomBtn.addEventListener("click", clearAll);
 
 //to update the status of the task (completed/pending)
 function updateStatus(selectedTask) {
@@ -146,7 +150,12 @@ function updateStatus(selectedTask) {
 //Main function to add a task to the task-list on pressing "Enter" key or submit button
 function addTask(e) {
     let userTask = taskInput.value.trim();
-    if ((e.key == "Enter" || e.target.tagName == "BUTTON") && userTask) {
+    if (
+        (e.key == "Enter" ||
+            e.target.tagName == "BUTTON" ||
+            e.target.tagName == "I") &&
+        userTask
+    ) {
         if (!isEditedTask) {
             if (!todos) {
                 todos = [];
@@ -167,3 +176,4 @@ function addTask(e) {
 taskInput.addEventListener("keyup", addTask);
 //add task on "Submit" Button.
 submit.addEventListener("click", addTask);
+plusButton.addEventListener("click", addTask);
