@@ -1,3 +1,35 @@
+const links = [...document.querySelectorAll(".controls span")];
+const light = document.querySelector(".controls .tubelight");
+let activeIndex = 0;
+let currentIndex = 0;
+let increment = 1;
+links.forEach((link, index) => {
+    if (links[index].classList.contains("active")) {
+        light.style.left = `${
+            links[index].offsetLeft + light.offsetWidth / 2
+        }px`;
+    }
+    link.addEventListener("click", (e) => {
+        activeIndex = index;
+        let t = setInterval(() => {
+            if (activeIndex > currentIndex) increment = 1;
+            else if (activeIndex < currentIndex) increment = -1;
+            currentIndex += increment;
+
+            links[currentIndex].classList.add("active");
+            if (currentIndex != -1)
+                links[currentIndex - increment].classList.remove("active");
+
+            if (currentIndex == activeIndex) {
+                e.target.classList.add("active");
+                increment = 0;
+                clearInterval(t);
+            }
+        }, 50);
+        light.style.left = `${e.target.offsetLeft + light.offsetWidth /2}px`;
+    });
+});
+
 const taskInput = document.querySelector(".task-input input");
 const taskBox = document.querySelector(".task-box");
 const clearBtn = document.querySelector(".clear-btn");
@@ -39,6 +71,7 @@ function showTodo(filter) {
             li || "<span>You don't have any task here...</span>";
     }
 }
+
 //On load show all taks.
 showTodo("all");
 
@@ -92,6 +125,7 @@ function updateClock() {
         timeOfDay;
     document.getElementById("clock").firstChild.nodeValue = currentTimeString;
 }
+
 //updating time for every 100ms.
 setInterval(updateClock, 100);
 
@@ -172,8 +206,10 @@ function addTask(e) {
         showTodo(currentFilter);
     }
 }
+
 //add task on "Enter Key"
 taskInput.addEventListener("keyup", addTask);
-//add task on "Submit" Button.
+
+//add task on "Submit/Plus" Button.
 submit.addEventListener("click", addTask);
 plusButton.addEventListener("click", addTask);
