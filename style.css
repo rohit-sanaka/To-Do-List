@@ -1,4 +1,6 @@
-/* defaults */
+/* -------- 
+  Defaults
+---------- */
 *{
   padding: 0;
   margin: 0;
@@ -12,7 +14,9 @@ body{
   background:#180148;
 }
 
-/*---------- Typography ------------*/
+/*---------------- 
+    Typography
+------------------*/
 
 .heading{
   color:chartreuse;
@@ -49,7 +53,9 @@ ul span{
   font-size: 1.5rem;
 }
 
-/*------------ Layout -----------*/
+/*------------
+    Layout 
+-------------*/
 
 .heading{
   margin:1em auto;
@@ -165,13 +171,18 @@ input::placeholder{
   justify-content: space-between;
   align-items: center;
 }
+.filters{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .filters{
-  width: 75%;
-  margin-left:1rem;
+  position: relative;
+  width: 100%;
 }
 .controls{
-  padding:0 0.2em 0.5em 0.2em;
+  padding:0em 0em 0.5em 0em;
   border-bottom: 2px solid #ccc;
 }
 
@@ -185,9 +196,15 @@ input::placeholder{
   background-color: black;
   cursor: pointer;
 }
+.filters span:first-child{
+  margin-left:2.5rem;
+}
+.filters span:nth-last-child(3){
+  margin-right:2.5rem;
+}
+
 .filters span.active{
   color :#fff ;
-  /* background-color:#2192FF ; */
   transform:scale(105%);
   opacity: 100%;
   transition-duration: 0.4s;  
@@ -195,29 +212,28 @@ input::placeholder{
 
 .controls .tubelight
 {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    transform: translateX(-53%);
-    width: 11rem;
-    height: 0.5em;
-    border-radius: 0.4em;
-    background: #fff;
-    transition: left 400ms ease;
-    z-index: 10;
+  position: absolute;
+  top:0em;
+  width: 10rem;
+  height: 0.5em;
+  border-radius: 0.4em;
+  background: #fff;
+  transition: left 400ms ease;
+  z-index: 10;
 }
 .controls .light-ray
 {
-    position: absolute;
-    top: 5px;
-    width: 11rem;
-    height: 4.7rem;
-    border-bottom: solid 5px black;
-    background: linear-gradient(to bottom,
-    rgba(255, 255, 255, 0.3) 10%,
-    rgba(255, 255, 255, 0) 100%);
-    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0%100%);
-    pointer-events: none;
+  position: absolute;
+  transform: translateX(-1em);
+  top: 5px;
+  width: 12rem;
+  height: 4.7rem;
+  border-bottom: solid 5px black;
+  background: linear-gradient(to bottom,
+  rgba(255, 255, 255, 0.5) 50%,
+  rgba(255, 255, 255, 0) 100%);
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0%100%);
+  pointer-events: none;
 }
 
 
@@ -247,7 +263,7 @@ input::placeholder{
   color: #fff;
   width: 100%;
   list-style: none;
-  padding-bottom: 0.5em;
+  padding: 0.25em;
   margin-bottom: 0.5em;
   border-bottom: 1px solid #ccc;
 }
@@ -256,7 +272,8 @@ input::placeholder{
   border-bottom: 0;
 }
 .task label{
-  width: 90%;
+  cursor: pointer;
+  width: 75%;
   display: flex;
   align-items:center;
 }
@@ -272,41 +289,25 @@ input::placeholder{
   text-decoration: line-through;
 }
 
-
 .task .settings{
-  cursor: pointer;
-  position:relative;
-  padding-right:1em;
-}
-.settings .task-menu{
-  color:black;
-  list-style: none;
-  position:absolute;
-  padding: 0.5em 0;
-  z-index: 2;
-  right: -0.5em;
-  border-radius: 4px;
-  background: #fff;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
-  transform: scale(0);
-  transform-origin: top right;
-  transition: transform 0.2s ease;
+  width: 25%;
+  text-align:center;
+  height: 100%;
 }
 
-.settings .task-menu.show{
-  transform: scale(1);
+.settings i{
+  cursor: pointer;
+  height: 100%;
+  padding: 0 0.5em;
+  border: white 1px solid ;
+  border-radius: 0.3em;
 }
-.task-menu li{
-  width: 95px;
-  height: 25px;
-  padding: 0 10px;
-  margin-bottom: 2px;
+
+.settings i:hover{
+  transition-duration: 100ms;
+  color: black;
+  background: #f5f5f5;
 }
-.task-menu li:hover{
-background: #f5f5f5;
-}
-.task-menu li:last-child{
-  padding-bottom: 0;
-}
+
 
 
