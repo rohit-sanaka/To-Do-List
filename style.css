@@ -199,8 +199,8 @@ input::placeholder{
 .filters span:first-child{
   margin-left:2.5rem;
 }
-.filters span:nth-last-child(3){
-  margin-right:2.5rem;
+.filters span:nth-child(3){
+  margin-right:2.5em; 
 }
 
 .filters span.active{
